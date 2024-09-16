@@ -1,0 +1,63 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black !important;
+}
+
+th {
+    background-color: #f2f2f2;
+    width: calc(100% / 7);
+    border: 1px solid black;
+}
+
+.evento {
+    margin: 0;
+    padding: 5px 0;
+}
+
+@media print {
+    button {
+        display: none;
+    }
+    header {
+        display: none;
+    }
+    footer {
+        display: none;
+    }
+    #footer{
+        display: none;
+    }
+    #print_button {
+        display: none !important;
+    }
+}

@@ -1,0 +1,20 @@
+﻿@{
+    Layout = null;
+    var data = ViewBag.Data as MateriaSeleccionadaData;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redireccionando...</title>
+</head>
+<body>
+    <form id="postForm" method="post" action="/Calendar/CalendarForm">
+        <input type="hidden" name="data" value="@Html.Raw(Json.Serialize(data))" />
+    </form>
+    <script type="text/javascript">
+        document.getElementById("postForm").submit();
+    </script>
+</body>
+</html>

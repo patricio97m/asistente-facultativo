@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Recomendacion";
+    var materias = ViewBag.DataSerializada as string;
+}
+<br />
+<h3>Resultados de las Materias</h3>
+<p>Estas son las recomendaciones del Asistente Facultativo en base a tu disponibilidad y preferencias</p>
+
+<div class="container mt-2">
+    <div class="row">
+        @foreach (var materia in ViewBag.Data)
+        {
+            <div class="col-md-4">
+                <div class="card border border-success rounded mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">@materia.nombre</h5>
+                        <p class="card-text">Nota Promedio: @materia.promedioPromocionMateria</p>
+                        @if (materia.prediccionPromocion)
+                        {
+                            <p class="card-text text-success fw-bold">Recomendada</p>
+                        }
+                        else
+                        {
+                            <p class="card-text text-danger fw-bold">No Recomendada</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+    <div class="mt-2 text-center">
+        <a href="/" class="btn btn-danger rounded w-25 mt-2">Regresar</a>
+
+        <!-- Formulario para enviar los datos a /Calendar/ -->
+        <form action="/Calendar/calendarForm" method="post" class="d-inline">
+            <input type="hidden" name="materias" value="@materias" />
+        <button type="submit" class="btn btn-success rounded w-25 mt-2">Confirmar</button>
+        </form>
+    </div>
+</div>

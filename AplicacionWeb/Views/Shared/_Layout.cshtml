@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Asistente Facultativo</title>
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="icon" href="~/fact_check.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="~/AplicacionWeb.styles.css" asp-append-version="true" />
+   
+       
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-light py-1">
+            <div class="container-fluid justifyalign-content-around">
+                <img src="~/logo_unlam_tr.gif" alt="Intraconsulta" width="100em">
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand justify-content-center text-center m-0">Asistente Facultativo</a>
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link" >Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.unlam.edu.ar/index.php?seccion=8&idArticulo=449" target="_blank">Calendario Academico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.unlam.edu.ar/index.php?seccion=2&idArticulo=570" target="_blank">Aulas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container main-container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+  
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

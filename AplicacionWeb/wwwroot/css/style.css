@@ -1,0 +1,104 @@
+.newFooter {
+    bottom: 0;
+    max-width: 100%;
+    position:relative;
+   
+}
+
+
+.input-number-1{
+    width: 60px;
+    position: relative;
+    left: 0.5rem;
+}
+
+.input-number-2{
+    width: 60px;
+    position: relative;
+    left: 2.2rem;
+}
+
+.main-container{
+    min-height: 65vh;
+}
+
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+
+    
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #f2f2f2;
+    width: calc(100% / 7);
+}
+
+.bg-dormir{
+    background-color: #009929 !important;
+}
+
+.bg-success {
+    background-color: #5ccb5f !important;
+}
+
+.bg-grey{
+    background-color: slategrey !important;
+}
+
+@media print {
+    button {
+        display: none;
+    }
+
+    header {
+        display: none;
+    }
+
+    footer {
+        display: none;
+    }
+    #footer{
+        display: none;
+    }
+    #print_button{
+        display: none!important;
+    }
+}
+.form-select {
+     max-width: 250px; /* Set a maximum width */
+
+ 
+}
+.custom-check {
+    background-color: darkgrey !important;
+    border-radius: 4px !important;
+}
+
+
+

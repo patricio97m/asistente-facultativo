@@ -1,0 +1,284 @@
+﻿@model SemanaModel
+<div class="container mt-5">
+    <h2 class="border-bottom border-3 border-black mb-5">Formulario Semanal</h2>
+    <form id="dataForm">
+        <div class="d-flex flex-row flex-wrap justify-content-center">
+            <!-- Lunes -->
+            <div class="col-3 mb-3 p-3 shadow-lg rounded mx-2 bg-success">
+                <h4 class="text-white fw-bold border-bottom border-3 py-2">Lunes</h4>
+                <input type="hidden" class="form-control" name="Lunes.Nombre" value="Lunes">
+                <div class="form-group">
+                    <label for="InicioHorarioDormirLunes" class="text-white">Inicio Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioDormirLunes" name="Lunes.InicioHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioDormirLunes" class="text-white">Fin Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioDormirLunes" name="Lunes.FinHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="InicioHorarioLaboralLunes" class="text-white">Inicio Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioLaboralLunes" name="Lunes.InicioHorarioLaboral" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioLaboralLunes" class="text-white">Fin Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioLaboralLunes" name="Lunes.FinHorarioLaboral" value="00:00">
+                </div>
+                @if (Model.Lunes?.MateriasQueCursa != null)
+                {
+                    <h5 class="pt-3 text-white fw-bold border-bottom border-2 py-1">Materias</h5>
+                    <ul>
+                        @foreach (var materia in Model.Lunes.MateriasQueCursa)
+                        {
+                            <li class="text-white list-unstyled">@materia.nombre - @materia.inicio:00 - @materia.fin:00</li>
+                        }
+                    </ul>
+                }
+            </div>
+
+            <!-- Martes -->
+            <div class="col-3 mb-3 p-3 shadow-lg rounded mx-2 bg-success">
+                <h4 class="text-white fw-bold border-bottom border-3 py-2">Martes</h4>
+                <input type="hidden" class="form-control" name="Martes.Nombre" value="Martes">
+                <div class="form-group">
+                    <label for="InicioHorarioDormirMartes" class="text-white">Inicio Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioDormirMartes" name="Martes.InicioHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioDormirMartes" class="text-white">Fin Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioDormirMartes" name="Martes.FinHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="InicioHorarioLaboralMartes" class="text-white">Inicio Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioLaboralMartes" name="Martes.InicioHorarioLaboral" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioLaboralMartes" class="text-white">Fin Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioLaboralMartes" name="Martes.FinHorarioLaboral" value="00:00">
+                </div>
+                @if (Model.Martes?.MateriasQueCursa != null)
+                {
+                    <h5 class="pt-3 text-white fw-bold border-bottom border-2 py-1">Materias</h5>
+                    <ul class="px-4">
+                        @foreach (var materia in Model.Martes.MateriasQueCursa)
+                        {
+                            <li class="text-white list-unstyled">@materia.nombre - @materia.inicio:00 - @materia.fin:00</li>
+                        }
+                    </ul>
+                }
+            </div>
+
+            <!-- Miércoles -->
+            <div class="col-3 mb-3 p-3 shadow-lg rounded mx-2 bg-success">
+                <h4 class="text-white fw-bold border-bottom border-3 py-2">Miércoles</h4>
+                <input type="hidden" class="form-control" name="Miercoles.Nombre" value="Miercoles">
+                <div class="form-group">
+                    <label for="InicioHorarioDormirMiercoles" class="text-white">Inicio Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioDormirMiercoles" name="Miercoles.InicioHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioDormirMiercoles" class="text-white">Fin Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioDormirMiercoles" name="Miercoles.FinHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="InicioHorarioLaboralMiercoles" class="text-white">Inicio Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioLaboralMiercoles" name="Miercoles.InicioHorarioLaboral" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioLaboralMiercoles" class="text-white">Fin Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioLaboralMiercoles" name="Miercoles.FinHorarioLaboral" value="00:00">
+                </div>
+                @if (Model.Miercoles?.MateriasQueCursa != null)
+                {
+                    <h5 class="pt-3 text-white fw-bold border-bottom border-2 py-1">Materias</h5>
+                    <ul class="px-4">
+                        @foreach (var materia in Model.Miercoles.MateriasQueCursa)
+                        {
+                            <li class="text-white list-unstyled">@materia.nombre - @materia.inicio:00 - @materia.fin:00</li>
+                        }
+                    </ul>
+                }
+            </div>
+
+            <!-- Jueves -->
+            <div class="col-3 mb-3 p-3 shadow-lg rounded mx-2 bg-success">
+                <h4 class="text-white fw-bold border-bottom border-3 py-2">Jueves</h4>
+                <input type="hidden" class="form-control" name="Jueves.Nombre" value="Jueves">
+                <div class="form-group">
+                    <label for="InicioHorarioDormirJueves" class="text-white">Inicio Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioDormirJueves" name="Jueves.InicioHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioDormirJueves" class="text-white">Fin Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioDormirJueves" name="Jueves.FinHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="InicioHorarioLaboralJueves" class="text-white">Inicio Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioLaboralJueves" name="Jueves.InicioHorarioLaboral" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioLaboralJueves" class="text-white">Fin Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioLaboralJueves" name="Jueves.FinHorarioLaboral" value="00:00">
+                </div>
+                @if (Model.Jueves?.MateriasQueCursa != null)
+                {
+                    <h5 class="pt-3 text-white fw-bold border-bottom border-2 py-1">Materias</h5>
+                    <ul class="px-4">
+                        @foreach (var materia in Model.Jueves.MateriasQueCursa)
+                        {
+                            <li class="text-white list-unstyled">@materia.nombre - @materia.inicio:00 - @materia.fin:00</li>
+                        }
+                    </ul>
+                }
+            </div>
+
+            <!-- Viernes -->
+            <div class="col-3 mb-3 p-3 shadow-lg rounded mx-2 bg-success">
+                <h4 class="text-white fw-bold border-bottom border-3 py-2">Viernes</h4>
+                <input type="hidden" class="form-control" name="Viernes.Nombre" value="Viernes">
+                <div class="form-group">
+                    <label for="InicioHorarioDormirViernes" class="text-white">Inicio Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioDormirViernes" name="Viernes.InicioHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioDormirViernes" class="text-white">Fin Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioDormirViernes" name="Viernes.FinHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="InicioHorarioLaboralViernes" class="text-white">Inicio Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioLaboralViernes" name="Viernes.InicioHorarioLaboral" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioLaboralViernes" class="text-white">Fin Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioLaboralViernes" name="Viernes.FinHorarioLaboral" value="00:00">
+                </div>
+                @if (Model.Viernes?.MateriasQueCursa != null)
+                {
+                    <h5 class="pt-3 text-white fw-bold border-bottom border-2 py-1">Materias</h5>
+                    <ul class="px-4">
+                        @foreach (var materia in Model.Viernes.MateriasQueCursa)
+                        {
+                            <li class="text-white list-unstyled">@materia.nombre - @materia.inicio:00 - @materia.fin:00</li>
+                        }
+                    </ul>
+                }
+            </div>
+
+            <!-- Sábado -->
+            <div class="col-3 mb-3 p-3 shadow-lg rounded mx-2 bg-success">
+                <h4 class="text-white fw-bold border-bottom border-3 py-2">Sábado</h4>
+                <input type="hidden" class="form-control" name="Sabado.Nombre" value="Sabado">
+                <div class="form-group">
+                    <label for="InicioHorarioDormirSabado" class="text-white">Inicio Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioDormirSabado" name="Sabado.InicioHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioDormirSabado" class="text-white">Fin Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioDormirSabado" name="Sabado.FinHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="InicioHorarioLaboralSabado" class="text-white">Inicio Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioLaboralSabado" name="Sabado.InicioHorarioLaboral" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioLaboralSabado" class="text-white">Fin Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioLaboralSabado" name="Sabado.FinHorarioLaboral" value="00:00">
+                </div>
+                @if (Model.Sabado?.MateriasQueCursa != null)
+                {
+                    <h5 class="pt-3 text-white fw-bold border-bottom border-2 py-1">Materias</h5>
+                    <ul class="px-4">
+                        @foreach (var materia in Model.Sabado.MateriasQueCursa)
+                        {
+                            <li class="text-white list-unstyled">@materia.nombre - @materia.inicio:00 - @materia.fin:00</li>
+                        }
+                    </ul>
+                }
+            </div>
+
+            <!-- Domingo -->
+            <div class="col-3 mb-3 p-3 shadow-lg rounded mx-2 bg-success">
+                <h4 class="text-white fw-bold border-bottom border-3 py-2">Domingo</h4>
+                <input type="hidden" class="form-control" name="Domingo.Nombre" value="Domingo">
+                <div class="form-group">
+                    <label for="InicioHorarioDormirDomingo" class="text-white">Inicio Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioDormirDomingo" name="Domingo.InicioHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioDormirDomingo" class="text-white">Fin Horario Dormir</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioDormirDomingo" name="Domingo.FinHorarioDormir" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="InicioHorarioLaboralDomingo" class="text-white">Inicio Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="InicioHorarioLaboralDomingo" name="Domingo.InicioHorarioLaboral" value="00:00">
+                </div>
+                <div class="form-group">
+                    <label for="FinHorarioLaboralDomingo" class="text-white">Fin Horario Laboral</label>
+                    <input type="time" class="form-control rounded-2" id="FinHorarioLaboralDomingo" name="Domingo.FinHorarioLaboral" value="00:00">
+                </div>
+                @if (Model.Domingo?.MateriasQueCursa != null)
+                {
+                    <h5 class="pt-3 text-white fw-bold border-bottom border-2 py-1">Materias</h5>
+                    <ul class="px-4">
+                        @foreach (var materia in Model.Domingo.MateriasQueCursa)
+                        {
+                            <li class="text-white list-unstyled">@materia.nombre:00 - @materia.inicio:00 - @materia.fin:00</li>
+                        }
+                    </ul>
+                }
+            </div>
+
+            <div class="col-12 d-flex justify-content-end">
+                <button type="submit" class="btn btn-warning rounded">Guardar</button>
+            </div>
+        </div>
+    </form>
+
+    <form id="jsonForm" asp-action="Index" method="post" style="visibility:hidden">
+        <input type="hidden" id="JsonData" name="JsonData" />
+        <button type="submit" ></button>
+    </form>
+
+</div>
+
+@section Scripts {
+    <script>
+        function serializeFormData(event) {
+            event.preventDefault();
+            const form = document.getElementById('dataForm');
+            const formData = new FormData(form);
+
+            // Inicializar el objeto JSON con los datos existentes del modelo
+            const jsonObject = {
+                Lunes: { MateriasQueCursa: @Html.Raw(Json.Serialize(Model.Lunes != null && Model.Lunes.MateriasQueCursa != null ? Model.Lunes.MateriasQueCursa : new List<MateriaSeleccionadaData>())) },
+                Martes: { MateriasQueCursa: @Html.Raw(Json.Serialize(Model.Martes != null && Model.Martes.MateriasQueCursa != null ? Model.Martes.MateriasQueCursa : new List<MateriaSeleccionadaData>())) },
+                Miercoles: { MateriasQueCursa: @Html.Raw(Json.Serialize(Model.Miercoles != null && Model.Miercoles.MateriasQueCursa != null ? Model.Miercoles.MateriasQueCursa : new List<MateriaSeleccionadaData>())) },
+                Jueves: { MateriasQueCursa: @Html.Raw(Json.Serialize(Model.Jueves != null && Model.Jueves.MateriasQueCursa != null ? Model.Jueves.MateriasQueCursa : new List<MateriaSeleccionadaData>())) },
+                Viernes: { MateriasQueCursa: @Html.Raw(Json.Serialize(Model.Viernes != null && Model.Viernes.MateriasQueCursa != null ? Model.Viernes.MateriasQueCursa : new List<MateriaSeleccionadaData>())) },
+                Sabado: { MateriasQueCursa: @Html.Raw(Json.Serialize(Model.Sabado != null && Model.Sabado.MateriasQueCursa != null ? Model.Sabado.MateriasQueCursa : new List<MateriaSeleccionadaData>())) },
+                Domingo: { MateriasQueCursa: @Html.Raw(Json.Serialize(Model.Domingo != null && Model.Domingo.MateriasQueCursa != null ? Model.Domingo.MateriasQueCursa : new List<MateriaSeleccionadaData>())) },
+                MateriasTotales: @Html.Raw(Json.Serialize(Model.MateriasTotales))
+            };
+
+            // Convertir FormData a objeto JSON
+            formData.forEach((value, key) => {
+                const keys = key.split('.');
+                keys.reduce((obj, currentKey, index) => {
+                    if (index === keys.length - 1) {
+                        obj[currentKey] = value;
+                    } else {
+                        if (!obj[currentKey]) {
+                            obj[currentKey] = {};
+                        }
+                    }
+                    return obj[currentKey];
+                }, jsonObject);
+            });
+
+            console.log(JSON.stringify(jsonObject, null, 2));
+            document.getElementById("JsonData").value = JSON.stringify(jsonObject, null, 2);
+            document.getElementById("jsonForm").submit();
+        }
+
+        document.getElementById('dataForm').addEventListener('submit', serializeFormData);
+    </script>
+}

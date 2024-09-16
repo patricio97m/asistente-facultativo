@@ -1,0 +1,612 @@
+﻿{
+  "Scenario": "Regression",
+  "DataSource": {
+    "Type": "TabularFile",
+    "Version": 1,
+    "FilePath": "C:\\Users\\uri_s\\OneDrive\\Documentos\\TrabajoGrupal-PrograWebIII\\GeneradorDeInformacion\\bin\\Debug\\net8.0\\data\\reportePrediccionCalendario.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Id",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "PromedioPromocionAlumno",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "CantMateriasElegidas",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "MenorPromedioPromocionMateria",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "IdMateria",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "PromedioPromocionMateria",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "Dia",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "InicioMayorTiempoLibre",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "FinMayorTiempoLibre",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "InicioPrediccionHorarioEstudio",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      },
+      {
+        "ColumnName": "FinPrediccionHorarioEstudio",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 4
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.99979582873688477,
+        "RuntimeInSeconds": 139.906,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e5",
+          "e0": {
+            "OutputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio"
+            ],
+            "InputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio"
+            ]
+          },
+          "e1": {
+            "InputColumnName": "Dia",
+            "OutputColumnName": "Dia"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio",
+              "Dia"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 21,
+            "LearningRate": 0.27319712371786875,
+            "NumberOfTrees": 2399,
+            "SubsampleFraction": 0.72582035418480129,
+            "MaximumBinCountPerFeature": 290,
+            "FeatureFraction": 0.87680099808346634,
+            "L1Regularization": 5.151861038873E-10,
+            "L2Regularization": 0.99999977667298645,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e6": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e7": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeRegression",
+        "Score": 0.99976862542996725,
+        "RuntimeInSeconds": 33.218,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3",
+          "e0": {
+            "OutputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio"
+            ],
+            "InputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio"
+            ]
+          },
+          "e1": {
+            "InputColumnName": "Dia",
+            "OutputColumnName": "Dia"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio",
+              "Dia"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 7,
+            "MinimumExampleCountPerLeaf": 44,
+            "NumberOfTrees": 127,
+            "MaximumBinCountPerFeature": 60,
+            "FeatureFraction": 0.971410723303859,
+            "LearningRate": 0.99999977667298645,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e6": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e7": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.99221407932459926,
+        "RuntimeInSeconds": 96.167,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4",
+          "e0": {
+            "OutputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio"
+            ],
+            "InputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio"
+            ]
+          },
+          "e1": {
+            "InputColumnName": "Dia",
+            "OutputColumnName": "Dia"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio",
+              "Dia"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 236,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e6": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e7": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.99220674615803828,
+        "RuntimeInSeconds": 77.672,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4",
+          "e0": {
+            "OutputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio"
+            ],
+            "InputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio"
+            ]
+          },
+          "e1": {
+            "InputColumnName": "Dia",
+            "OutputColumnName": "Dia"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio",
+              "Dia"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 177,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e6": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e7": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.9920747008281412,
+        "RuntimeInSeconds": 63.06,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4",
+          "e0": {
+            "OutputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio"
+            ],
+            "InputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio"
+            ]
+          },
+          "e1": {
+            "InputColumnName": "Dia",
+            "OutputColumnName": "Dia"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Id",
+              "PromedioPromocionAlumno",
+              "CantMateriasElegidas",
+              "MenorPromedioPromocionMateria",
+              "IdMateria",
+              "PromedioPromocionMateria",
+              "InicioMayorTiempoLibre",
+              "FinMayorTiempoLibre",
+              "InicioPrediccionHorarioEstudio",
+              "Dia"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 123,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e3": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e6": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          },
+          "e7": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "FinPrediccionHorarioEstudio",
+            "FeatureColumnName": "Features"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ReplaceMissingValues",
+      "e1": "FeaturizeText",
+      "e2": "Concatenate",
+      "e3": "FastTreeRegression",
+      "e4": "FastForestRegression",
+      "e5": "LightGbmRegression",
+      "e6": "LbfgsPoissonRegressionRegression",
+      "e7": "SdcaRegression"
+    },
+    "Schema": "e0 * e1 * e2 * (e3 + e4 + e5 + e6 + e7)",
+    "MetricName": "RSquared",
+    "ModelFilePath": "C:\\Users\\uri_s\\OneDrive\\Documentos\\TrabajoGrupal-PrograWebIII\\AsistenteFacultativo\\ModeloCalendario.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 4,
+  "TrainingOption": {
+    "Version": 1,
+    "Type": "RegressionTrainingOption",
+    "TrainingTime": 6000,
+    "LabelColumn": "FinPrediccionHorarioEstudio",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "TrainValidateSplitValidationOption",
+      "SplitRatio": 0.2
+    }
+  }
+}

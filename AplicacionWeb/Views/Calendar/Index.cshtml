@@ -1,0 +1,54 @@
+﻿@{
+    var eventos = ViewBag.ListaEventos;
+    var jsonEventos = Newtonsoft.Json.JsonConvert.SerializeObject(eventos);
+}
+
+<button onclick="window.print()" class="mt-3 btn btn-outline-success rounded-2" id="print_button">
+    <img src="~/download-minimalistic-svgrepo-com.svg" alt="Descargar" width="25" />
+</button>
+
+<table class="table mt-5" id="tabla-calendario">
+    <thead>
+        <tr>
+            <th class="bg-grey rounded text-white mb-2 text-center">Lunes</th>
+            <th class="bg-grey rounded text-white mb-2 text-center">Martes</th>
+            <th class="bg-grey rounded text-white mb-2 text-center">Miércoles</th>
+            <th class="bg-grey rounded text-white mb-2 text-center">Jueves</th>
+            <th class="bg-grey rounded text-white mb-2 text-center">Viernes</th>
+            <th class="bg-grey rounded text-white mb-2 text-center">Sábado</th>
+            <th class="bg-grey rounded text-white mb-2 text-center">Domingo</th>
+        </tr>
+    </thead>
+    <tbody id="calendario">
+        <tr id="horario">
+            <td class="bg-dormir rounded text-white text-center border fw-bold" id="lunes"></td>
+            <td class="bg-dormir rounded text-white text-center border fw-bold" id="martes"></td>
+            <td class="bg-dormir rounded text-white text-center border fw-bold" id="miercoles"></td>
+            <td class="bg-dormir rounded text-white text-center border fw-bold" id="jueves"></td>
+            <td class="bg-dormir rounded text-white text-center border fw-bold" id="viernes"></td>
+            <td class="bg-dormir rounded text-white text-center border fw-bold" id="sabado"></td>
+            <td class="bg-dormir rounded text-white text-center border fw-bold" id="domingo"></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var eventos = @Html.Raw(jsonEventos);
+        console.log(eventos)
+        eventos.forEach((e) => {
+            agregarEvento(e.Dia, e.Inicio, e.Fin, e.Descripcion);
+        })
+        //agregarEvento('Lunes', '8:00', '12:00', 'Programación Web 1');
+        //agregarEvento('Lunes', '13:00', '18:00', 'Trabajo');
+        //agregarEvento('Lunes', '19:00', '23:00', 'Diseño Grafico en la Web');
+        //agregarEvento('Martes', '13:00', '18:00', 'Trabajo');
+        //agregarEvento('Miercoles', '13:00', '18:00', 'Trabajo');
+        //agregarEvento('Jueves', '13:00', '18:00', 'Trabajo');
+        //agregarEvento('Viernes', '13:00', '18:00', 'Trabajo');
+    });
+</script>
+
+
+
+
